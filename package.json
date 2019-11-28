@@ -1,0 +1,28 @@
+{
+  "name": "picstrata-client",
+  "version": "0.1.0",
+  "description": "Picstrata client for Node.js.",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/tslint/bin/tslint --project tsconfig.json && ./node_modules/typescript/bin/tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewrmiller/picstrata-nodejs.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrewrmiller/picstrata-nodejs/issues"
+  },
+  "homepage": "https://github.com/andrewrmiller/picstrata-nodejs#readme",
+  "dependencies": {
+    "typescript": "^3.7.2"
+  },
+  "devDependencies": {
+    "ts-node": "^8.5.4",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0"
+  }
+}
