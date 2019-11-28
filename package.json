@@ -2,7 +2,7 @@
   "name": "picstrata-client",
   "version": "0.1.0",
   "description": "Picstrata client for Node.js.",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "build": "./node_modules/tslint/bin/tslint --project tsconfig.json && ./node_modules/typescript/bin/tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
