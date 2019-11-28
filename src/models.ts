@@ -1,3 +1,5 @@
+import { Role } from './enums';
+
 /**
  * @interface IStatistics
  *
@@ -23,6 +25,7 @@ export interface ILibrary {
   libraryId: string;
   name: string;
   description?: string;
+  userRole: Role;
 }
 
 /**
