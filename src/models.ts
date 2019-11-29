@@ -147,6 +147,45 @@ export interface IFolderUpdate {
 }
 
 /**
+ * @interface IFolderUser
+ *
+ * Interface which represents a user that has been added to a folder.
+ *
+ * @prop libraryId - Unique ID of the parent library.
+ * @prop folderId - Unique ID of the folder.
+ * @prop userId - Unique ID of the user.
+ * @prop role - Role the user has in the folder.
+ */
+export interface IFolderUser {
+  libraryId: string;
+  folderId: string;
+  userId: string;
+  role: Role;
+}
+
+/**
+ * @interface IFolderUserAdd
+ *
+ * Information passed to the API to add a new user to a folder.
+ *
+ * @prop userId - Unique ID of the user to add.
+ * @prop role - Role the user should have in the folder.
+ */
+export interface IFolderUserAdd {
+  userId: string;
+  role: Role;
+}
+
+/**
+ * @interface IFolderUserUpdate
+ *
+ * @prop role - Role the user should have in the folder.
+ */
+export interface IFolderUserUpdate {
+  role: Role;
+}
+
+/**
  * @interface IFile
  *
  * Representation of a file.
