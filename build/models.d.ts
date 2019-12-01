@@ -18,12 +18,13 @@ export interface IStatistics {
  * @prop libraryId - Unique ID of the library.
  * @prop name - Name of the library.
  * @prop description - Description of the library.
+ * @prop userRole - Requesting user's role on the library.
  */
 export interface ILibrary {
     libraryId: string;
     name: string;
     description?: string;
-    userRole: Role;
+    userRole?: Role;
 }
 /**
  * @interface ILibraryAdd
@@ -75,9 +76,11 @@ export declare enum FolderType {
  * @prop fileSizeSm - Total size of small thumbnails.
  * @prop fileSizeMd - Total size of medium thumbnails.
  * @prop fileSizeLg - Total size of large thumbnails.
+ * @prop fileSizeCnvVideo - Total size of converted video files.
  * @prop data - Data associated with the folder.
  * @prop where - Where clause used to retrieve folder contents.
  * @prop orderBy - Order by clause used when retrieving folder contents.
+ * @prop userRole - Requesting user's role on the folder.
  */
 export interface IFolder {
     libraryId: string;
@@ -91,9 +94,11 @@ export interface IFolder {
     fileSizeSm: number;
     fileSizeMd: number;
     fileSizeLg: number;
+    fileSizeCnvVideo: number;
     data: string;
     where: string;
     orderBy: string;
+    userRole?: Role;
 }
 /**
  * @interface IFolderAdd
