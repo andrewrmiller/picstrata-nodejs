@@ -125,6 +125,21 @@ export interface IFolder {
 }
 
 /**
+ * @interface IFolder
+ *
+ * Representation of a breadcrumb in a folder's parent heirarchy.
+ *
+ * @prop libraryId - Unique ID of the containing library.
+ * @prop folderId - Unique ID of the folder.
+ * @prop name - The name of the folder (e.g. 'Summer BBQ').
+ */
+export interface IBreadcrumb {
+  libraryId: string;
+  folderId: string;
+  name: string;
+}
+
+/**
  * @interface IFolderAdd
  *
  * Information passed to the API to create a new folder.
