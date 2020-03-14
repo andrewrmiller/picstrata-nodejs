@@ -272,6 +272,7 @@ export interface IFileUpdate {
   rating?: number;
   title?: string;
   subject?: string;
+  comments?: string;
 }
 
 export interface IFileContentInfo {
