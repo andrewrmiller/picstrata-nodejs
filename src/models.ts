@@ -273,6 +273,7 @@ export interface IFileUpdate {
   title?: string;
   subject?: string;
   comments?: string;
+  tags?: string[];
 }
 
 export interface IFileContentInfo {
