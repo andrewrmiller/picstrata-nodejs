@@ -223,12 +223,12 @@ export interface IFolderUserUpdate {
  * @prop modifiedOn - Date when the file was last modified.
  * @prop rating - Rating of the picture.
  * @prop title - Title of the picture.
- * @prop subject - Subject of the picture.
  * @prop comments - Comments about the picture.
  * @prop fileSize - Size of the picture in bytes.
  * @prop fileSizeSm - Size of the small thumbnail in bytes.
  * @prop fileSizeMd - Szie of the medium thumbnail in bytes.
  * @prop fileSizeLg - Size of the large thumbnail in bytes.
+ * @prop fileZieCnvVideo - Size of the converted video file in bytes.
  * @prop fileSizeBackup - Szie of the backup picture in bytes.
  * @prop isProcessing - True if we are currently processing this picture.
  */
@@ -246,7 +246,6 @@ export interface IFile {
   modifiedOn?: string;
   rating?: number;
   title?: string;
-  subject?: string;
   comments?: string;
   fileSize: number;
   fileSizeSm?: number;
@@ -271,7 +270,6 @@ export interface IFileUpdate {
   name?: string;
   rating?: number;
   title?: string;
-  subject?: string;
   comments?: string;
   tags?: string[];
 }
