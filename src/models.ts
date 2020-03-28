@@ -254,6 +254,7 @@ export interface IFile {
   fileSizeCnvVideo?: number;
   fileSizeBackup?: number;
   isProcessing: number;
+  tags: string[];
 }
 
 export interface IFileAdd {
