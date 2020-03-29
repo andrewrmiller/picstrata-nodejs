@@ -38,11 +38,13 @@ export interface ILibrary {
  *
  * @prop libraryId - Unique ID of the library as GUID (optional).
  * @prop name - Name of the library to create.
+ * @prop timeZone - Default time zone for files uploaded to the library.
  * @prop description - Description of the library.
  */
 export interface ILibraryAdd {
   libraryId?: string;
   name: string;
+  timeZone: string;
   description?: string;
 }
 
@@ -51,11 +53,13 @@ export interface ILibraryAdd {
  *
  * Information passed to the API to update an existing library.
  *
- * @prop name - The new name of the library.
+ * @prop name - New name of the library.
+ * @prop timeZone - New default time zone for files uploaded to the library.
  * @prop description - Updated description for the library.
  */
 export interface ILibraryUpdate {
   name?: string;
+  timeZone?: string;
   description?: string;
 }
 
