@@ -268,6 +268,7 @@ export interface IFileAdd {
 }
 
 export interface IFileUpdate {
+  takenOn?: string;
   name?: string;
   rating?: number;
   title?: string;
