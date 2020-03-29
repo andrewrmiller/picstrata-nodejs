@@ -19,12 +19,14 @@ export interface IStatistics {
  *
  * @prop libraryId - Unique ID of the library.
  * @prop name - Name of the library.
+ * @prop timeZone - Default time zone for files uploaded to the library.
  * @prop description - Description of the library.
  * @prop userRole - Requesting user's role on the library.
  */
 export interface ILibrary {
   libraryId: string;
   name: string;
+  timeZone: string;
   description?: string;
   userRole?: Role;
 }
