@@ -230,6 +230,9 @@ export interface IFolderUserUpdate {
  * @prop rating - Rating of the picture.
  * @prop title - Title of the picture.
  * @prop comments - Comments about the picture.
+ * @prop latitutde - GPS latitude in decimal degrees.  String for precision.
+ * @prop longitude - GPS longitude in decimal degrees.  String for precision.
+ * @prop altitude - GPS altitude in meters above/below sea level.  String for precision.
  * @prop fileSize - Size of the picture in bytes.
  * @prop fileSizeSm - Size of the small thumbnail in bytes.
  * @prop fileSizeMd - Szie of the medium thumbnail in bytes.
@@ -253,6 +256,9 @@ export interface IFile {
   rating?: number;
   title?: string;
   comments?: string;
+  latitude?: string;
+  longitude?: string;
+  altitude?: string;
   fileSize: number;
   fileSizeSm?: number;
   fileSizeMd?: number;
