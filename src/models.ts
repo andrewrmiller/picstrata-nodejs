@@ -285,6 +285,9 @@ export interface IFileUpdate {
   rating?: number;
   title?: string;
   comments?: string;
+  latitude?: string;
+  longitude?: string;
+  altitude?: string;
   tags?: string[];
 }
 
