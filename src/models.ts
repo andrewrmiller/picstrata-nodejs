@@ -301,3 +301,10 @@ export interface IFileContentInfo {
   path: string;
   isProcessing: boolean;
 }
+
+export interface IAlbum {
+  libraryId: string;
+  albumId: string;
+  name: string;
+  isDynamic: boolean;
+}
