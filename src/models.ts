@@ -289,6 +289,8 @@ export interface IFileUpdate {
   rating?: number;
   title?: string;
   comments?: string;
+  cameraMake?: string;
+  cameraModel?: string;
   latitude?: string;
   longitude?: string;
   altitude?: string;
