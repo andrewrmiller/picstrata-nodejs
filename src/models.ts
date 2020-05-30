@@ -230,6 +230,8 @@ export interface IFolderUserUpdate {
  * @prop rating - Rating of the picture.
  * @prop title - Title of the picture.
  * @prop comments - Comments about the picture.
+ * @prop cameraMake - Make of the camera used to take the picture.
+ * @prop cameraModel - Model of the camera used to take the picture.
  * @prop latitutde - GPS latitude in decimal degrees.  String for precision.
  * @prop longitude - GPS longitude in decimal degrees.  String for precision.
  * @prop altitude - GPS altitude in meters above/below sea level.  String for precision.
@@ -256,6 +258,8 @@ export interface IFile {
   rating?: number;
   title?: string;
   comments?: string;
+  cameraMake?: string;
+  cameraModel?: string;
   latitude?: string;
   longitude?: string;
   altitude?: string;
