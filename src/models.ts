@@ -65,32 +65,6 @@ export interface ILibraryUpdate {
 }
 
 /**
- * Enumeration of the different types of folders.
- */
-export enum FolderType {
-  // Standard picture folder.  May contain pictures, videos and
-  // child picture folders.
-  Picture = 'picture',
-
-  // Search folder parent.  Used to create a heirarchy of search
-  // folders.  e.g.:
-  //
-  //   Search Folders
-  //      Ratings
-  //          ... search folders here...
-  //      Keywords
-  //          ... search folders here...
-  //
-  // May contain search folders and other search parent folders.
-  SearchParent = 'search_parent',
-
-  // Search folder which executes a query to return folder contents.
-  // e.g. "Rating = 5", "Keywords = Family", etc.  May not contain
-  // pictures, videos or child folders.
-  Search = 'search'
-}
-
-/**
  * @interface IFolder
  *
  * Representation of a folder.
@@ -99,7 +73,6 @@ export enum FolderType {
  * @prop folderId - Unique ID of the folder.
  * @prop name - The name of the folder (e.g. 'Summer BBQ').
  * @prop parentId - Unique ID of the parent folder or null for root folders.
- * @prop type - The type of folder.
  * @prop path - Path to the folder in the file system.  Relative to file system root.
  * @prop fileCount - Number of pictures in the folder (excludes thumbnails).
  * @prop fileSize - Total size for the pictures in the folder (excludes thumbnails).
@@ -117,7 +90,6 @@ export interface IFolder {
   folderId: string;
   name: string;
   parentId: string | null;
-  type: FolderType;
   path: string;
   fileCount: number;
   fileSize: number;
@@ -153,13 +125,11 @@ export interface IBreadcrumb {
  *
  * @prop parentId - Unique ID of parent folder or null to create a new top level folder.
  * @prop name - Name of the folder (e.g. 'Summer BBQ').  Must be unique within the parent.
- * @prop type - The type of folder.
  */
 export interface IFolderAdd {
   // Set parentId to null to create a top level folder.
   parentId: string | null;
   name: string;
-  type: FolderType;
 }
 
 /**
@@ -309,9 +279,65 @@ export interface IFileContentInfo {
   isProcessing: boolean;
 }
 
+/**
+ * Enumeration of the file attributes which may be used in a query.
+ */
+export enum FileAttribute {
+  Rating = 'rating',
+  ParentFolder = 'parentFolder',
+  IsVideo = 'isVideo'
+}
+
+/**
+ * Enumeration of the operators that can be used in a query criterion.
+ */
+export enum Operator {
+  Equals = 'eq',
+  NotEquals = 'neq',
+  OneOf = 'oneOf',
+  NotOneOf = 'notOneOf',
+  LessThan = 'lt',
+  LessThanOrEquals = 'lte',
+  GreaterThan = 'gt',
+  GreaterThanOrEquals = 'gte'
+}
+
+/**
+ * Model for an individual file criterion.
+ */
+export interface IFileCriterion {
+  attribute: FileAttribute;
+  operator: Operator;
+  value: string | string[] | number | boolean;
+}
+
+/**
+ * Model for a persisted file query.  A file query can be the source
+ * of files for an album.
+ */
+export interface IFileQuery {
+  version: string;
+  criteria?: IFileCriterion[];
+  orderBy?: string[];
+}
+
+/**
+ * A container of files where the files are either selected individually
+ * or provided via a file query.
+ */
 export interface IAlbum {
   libraryId: string;
   albumId: string;
   name: string;
-  isDynamic: boolean;
+  query?: IFileQuery;
+}
+
+export interface IAlbumAdd {
+  name: string;
+  query?: IFileQuery;
+}
+
+export interface IAlbumUpdate {
+  name?: string;
+  query?: string;
 }
