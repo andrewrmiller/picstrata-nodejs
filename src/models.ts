@@ -283,9 +283,15 @@ export interface IFileContentInfo {
  * Enumeration of the file attributes which may be used in a query.
  */
 export enum FileAttribute {
+  ParentFolderId = 'parentFolderId',
+  ParentFolderName = 'parentFolderName',
+  Filename = 'filename',
   Rating = 'rating',
-  ParentFolder = 'parentFolder',
-  IsVideo = 'isVideo'
+  IsVideo = 'isVideo',
+  ImportedOn = 'importedOn',
+  TakenOn = 'takenOn',
+  ModifiedOn = 'modifiedOn',
+  Tags = 'tags'
 }
 
 /**
@@ -299,7 +305,8 @@ export enum Operator {
   LessThan = 'lt',
   LessThanOrEquals = 'lte',
   GreaterThan = 'gt',
-  GreaterThanOrEquals = 'gte'
+  GreaterThanOrEquals = 'gte',
+  Contains = 'contains'
 }
 
 /**
@@ -311,6 +318,19 @@ export interface IFileCriterion {
   value: string | string[] | number | boolean;
 }
 
+export enum SortDirection {
+  Ascending = 'asc',
+  Descending = 'desc'
+}
+
+/**
+ * Model for an individual order by clause.
+ */
+export interface IFileOrderBy {
+  attribute: FileAttribute;
+  direction: SortDirection;
+}
+
 /**
  * Model for a persisted file query.  A file query can be the source
  * of files for an album.
@@ -318,7 +338,7 @@ export interface IFileCriterion {
 export interface IFileQuery {
   version: string;
   criteria?: IFileCriterion[];
-  orderBy?: string[];
+  orderBy?: IFileOrderBy[];
 }
 
 /**
