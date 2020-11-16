@@ -1,6 +1,6 @@
 {
   "name": "@picstrata/client",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Picstrata client for Node.js.",
   "main": "build/index.js",
   "scripts": {

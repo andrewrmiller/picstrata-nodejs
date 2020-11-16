@@ -1,4 +1,4 @@
-import { Role } from './enums';
+import { ObjectType, Role } from './enums';
 
 /**
  * @interface IStatistics
@@ -9,8 +9,51 @@ export interface IStatistics {
   libraryCount: number;
   folderCount: number;
   fileCount: number;
-  folderUserRoleCount: number;
+  roleAssignmentCount: number;
   queueLength: number;
+}
+
+/**
+ * @interface IRoleAssignmentAdd
+ *
+ * Information passed to the API to add a new user to the
+ * membership of a library object.
+ *
+ * @prop userId - Unique ID of the user to add.
+ * @prop role - Role the user should have in the folder.
+ */
+export interface IRoleAssignmentAdd {
+  userId: string;
+  role: Role;
+}
+
+/**
+ * @interface IRoleAssignmentUpdate
+ *
+ * @prop role - Role the user should have in the object.
+ */
+export interface IRoleAssignmentUpdate {
+  role: Role;
+}
+
+/**
+ * @interface IRoleAssignment
+ *
+ * Interface which represents the role assigned to a user for
+ * a given object in the library.
+ *
+ * @prop libraryId - Unique ID of the parent library.
+ * @prop objectType - The type of object.
+ * @prop folderId - Unique ID of the object.
+ * @prop userId - Unique ID of the user.
+ * @prop role - Role the user has for the object.
+ */
+export interface IRoleAssignment {
+  libraryId: string;
+  objectType: ObjectType;
+  objectId: string;
+  userId: string;
+  role: Role;
 }
 
 /**
@@ -80,9 +123,6 @@ export interface ILibraryUpdate {
  * @prop fileSizeMd - Total size of medium thumbnails.
  * @prop fileSizeLg - Total size of large thumbnails.
  * @prop fileSizeCnvVideo - Total size of converted video files.
- * @prop data - Data associated with the folder.
- * @prop where - Where clause used to retrieve folder contents.
- * @prop orderBy - Order by clause used when retrieving folder contents.
  * @prop userRole - Requesting user's role on the folder.
  */
 export interface IFolder {
@@ -97,14 +137,11 @@ export interface IFolder {
   fileSizeMd: number;
   fileSizeLg: number;
   fileSizeCnvVideo: number;
-  data: string;
-  where: string;
-  orderBy: string;
   userRole?: Role;
 }
 
 /**
- * @interface IFolder
+ * @interface IBreadcrumb
  *
  * Representation of a breadcrumb in a folder's parent heirarchy.
  *
@@ -141,45 +178,6 @@ export interface IFolderAdd {
  */
 export interface IFolderUpdate {
   name?: string;
-}
-
-/**
- * @interface IFolderUser
- *
- * Interface which represents a user that has been added to a folder.
- *
- * @prop libraryId - Unique ID of the parent library.
- * @prop folderId - Unique ID of the folder.
- * @prop userId - Unique ID of the user.
- * @prop role - Role the user has in the folder.
- */
-export interface IFolderUser {
-  libraryId: string;
-  folderId: string;
-  userId: string;
-  role: Role;
-}
-
-/**
- * @interface IFolderUserAdd
- *
- * Information passed to the API to add a new user to a folder.
- *
- * @prop userId - Unique ID of the user to add.
- * @prop role - Role the user should have in the folder.
- */
-export interface IFolderUserAdd {
-  userId: string;
-  role: Role;
-}
-
-/**
- * @interface IFolderUserUpdate
- *
- * @prop role - Role the user should have in the folder.
- */
-export interface IFolderUserUpdate {
-  role: Role;
 }
 
 /**

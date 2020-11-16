@@ -1,5 +1,15 @@
 /**
- * Enumeration of the user roles supported by picstrata.
+ * Enumeration of the types of objects that make up a Picstrata library.
+ */
+export enum ObjectType {
+  Library = 'library',
+  Folder = 'folder',
+  File = 'file',
+  Album = 'album'
+}
+
+/**
+ * Enumeration of the user roles supported by Picstrata.
  */
 export enum Role {
   Owner = 'owner',
