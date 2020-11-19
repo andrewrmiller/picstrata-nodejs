@@ -9,6 +9,7 @@ export interface IStatistics {
   libraryCount: number;
   folderCount: number;
   fileCount: number;
+  albumCount: number;
   roleAssignmentCount: number;
   queueLength: number;
 }
