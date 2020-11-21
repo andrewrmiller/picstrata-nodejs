@@ -358,5 +358,5 @@ export interface IAlbumAdd {
 
 export interface IAlbumUpdate {
   name?: string;
-  query?: string;
+  query?: IFileQuery;
 }
