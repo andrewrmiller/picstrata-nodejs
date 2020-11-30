@@ -15,7 +15,7 @@ export interface IStatistics {
 }
 
 /**
- * @interface IRoleAssignmentAdd
+ * @interface IObjectUserAdd
  *
  * Information passed to the API to add a new user to the
  * membership of a library object.
@@ -23,22 +23,22 @@ export interface IStatistics {
  * @prop userId - Unique ID of the user to add.
  * @prop role - Role the user should have in the folder.
  */
-export interface IRoleAssignmentAdd {
+export interface IObjectUserAdd {
   userId: string;
   role: Role;
 }
 
 /**
- * @interface IRoleAssignmentUpdate
+ * @interface IObjectUserUpdate
  *
  * @prop role - Role the user should have in the object.
  */
-export interface IRoleAssignmentUpdate {
+export interface IObjectUserUpdate {
   role: Role;
 }
 
 /**
- * @interface IRoleAssignment
+ * @interface IObjectUser
  *
  * Interface which represents the role assigned to a user for
  * a given object in the library.
@@ -49,7 +49,7 @@ export interface IRoleAssignmentUpdate {
  * @prop userId - Unique ID of the user.
  * @prop role - Role the user has for the object.
  */
-export interface IRoleAssignment {
+export interface IObjectUser {
   libraryId: string;
   objectType: ObjectType;
   objectId: string;
