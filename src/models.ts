@@ -10,7 +10,7 @@ export interface IStatistics {
   folderCount: number;
   fileCount: number;
   albumCount: number;
-  roleAssignmentCount: number;
+  objectUserCount: number;
   queueLength: number;
 }
 
