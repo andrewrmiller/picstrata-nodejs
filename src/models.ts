@@ -123,7 +123,7 @@ export interface ILibraryUpdate {
  * @prop fileSizeSm - Total size of small thumbnails.
  * @prop fileSizeMd - Total size of medium thumbnails.
  * @prop fileSizeLg - Total size of large thumbnails.
- * @prop fileSizeCnvVideo - Total size of converted video files.
+ * @prop fileSizeCnv - Total size of converted files.
  * @prop userRole - Requesting user's role on the folder.
  */
 export interface IFolder {
@@ -137,7 +137,7 @@ export interface IFolder {
   fileSizeSm: number;
   fileSizeMd: number;
   fileSizeLg: number;
-  fileSizeCnvVideo: number;
+  fileSizeCnv: number;
   userRole?: Role;
 }
 
@@ -209,7 +209,7 @@ export interface IFolderUpdate {
  * @prop fileSizeSm - Size of the small thumbnail in bytes.
  * @prop fileSizeMd - Szie of the medium thumbnail in bytes.
  * @prop fileSizeLg - Size of the large thumbnail in bytes.
- * @prop fileZieCnvVideo - Size of the converted video file in bytes.
+ * @prop fileZieCnv - Size of the converted file in bytes.
  * @prop fileSizeBackup - Szie of the backup picture in bytes.
  * @prop isProcessing - True if we are currently processing this picture.
  */
@@ -237,7 +237,7 @@ export interface IFile {
   fileSizeSm?: number;
   fileSizeMd?: number;
   fileSizeLg?: number;
-  fileSizeCnvVideo?: number;
+  fileSizeCnv?: number;
   fileSizeBackup?: number;
   isProcessing: number;
   tags: string[];
