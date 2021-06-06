@@ -267,17 +267,6 @@ export interface IFileUpdate {
   tags?: string[];
 }
 
-export interface IFileContentInfo {
-  libraryId: string;
-  folderId: string;
-  fileId: string;
-  name: string;
-  isVideo: boolean;
-  mimeType: string;
-  path: string;
-  isProcessing: boolean;
-}
-
 /**
  * Enumeration of the file attributes which may be used in a query.
  */
