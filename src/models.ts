@@ -330,6 +330,13 @@ export interface IFileQuery {
 }
 
 /**
+ * Model that represents the target of a file copy operation.
+ */
+ export interface IFileCopyTarget {
+  targetFolderId: string
+}
+
+/**
  * A container of files where the files are either selected individually
  * or provided via a file query.
  */
@@ -349,3 +356,26 @@ export interface IAlbumUpdate {
   name?: string;
   query?: IFileQuery;
 }
+
+export enum ExportJobStatus {
+  Queued = 'queued',
+  Processing = 'processing',
+  Failed = 'failed',
+  Success = 'success'
+}
+
+export interface IExportJob {
+  jobId: string;
+  libraryId: string;
+  fileIds: string;
+  filename: string;
+  status: ExportJobStatus;
+  error?: string;
+}
+
+export interface IExportJobAdd {
+  libraryId: string;
+  fileIds: string[];
+  filename: string;
+}
+
