@@ -374,8 +374,6 @@ export interface IExportJob {
 }
 
 export interface IExportJobAdd {
-  libraryId: string;
   fileIds: string[];
-  filename: string;
 }
 
