@@ -367,12 +367,13 @@ export enum ExportJobStatus {
 export interface IExportJob {
   jobId: string;
   libraryId: string;
-  fileIds: string[];
   status: ExportJobStatus;
   error?: string;
+  createdBy: string;
+  updatedBy: string;
+  updatedOn: string;
 }
 
 export interface IExportJobAdd {
   fileIds: string[];
 }
-
