@@ -330,13 +330,6 @@ export interface IFileQuery {
 }
 
 /**
- * Model that represents the target of a file copy operation.
- */
- export interface IFileCopyTarget {
-  targetFolderId: string
-}
-
-/**
  * A container of files where the files are either selected individually
  * or provided via a file query.
  */
