@@ -1,4 +1,4 @@
-import { ObjectType, Role } from './enums';
+import { ExportJobStatus, ObjectType, Role } from './enums';
 
 /**
  * @interface IStatistics
@@ -348,13 +348,6 @@ export interface IAlbumAdd {
 export interface IAlbumUpdate {
   name?: string;
   query?: IFileQuery;
-}
-
-export enum ExportJobStatus {
-  Queued = 'queued',
-  Processing = 'processing',
-  Failed = 'failed',
-  Success = 'success'
 }
 
 export interface IExportJob {

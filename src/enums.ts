@@ -22,3 +22,13 @@ export enum ThumbnailSize {
   Medium = 'md',
   Large = 'lg'
 }
+
+/**
+ * Enumeration of the possible states for an export job.
+ */
+export enum ExportJobStatus {
+  Pending = 'pending',
+  Processing = 'processing',
+  Success = 'success',
+  Failed = 'failed'
+}
